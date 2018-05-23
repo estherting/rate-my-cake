@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+
+    </script>
+  </head>
+  <body>
+    <h1>Thank you for your order!</h1>
+    <p>We ordered {{items}} for you and charged your student account on DATE.</p>
+
+    <h2>You've ordered</h2>
+    <table>
+      <tr>
+        <th>Fruit Name</th>
+        <th>Quantity</th>
+      </tr>
+      {% for i in range(0, 4)%}
+        <tr>
+          <td>{{fruits[i]}}</td>
+          <td>{{fruitCount[i]}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+    <h3>Your Information</h3>
+    <p>Name: {{name}}</p>
+    <p>Your Student ID: {{id}}</p>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>HEllO</h1>
+
+    <form action="/blogs/create" method="post">{%csrf_token%}
+      Blog Name: <input name="blog-name" type="text">
+      <input type="submit" value="submit">
+    </form>
+    <h2>New Blogs:</h2>
+
+    <h2>Upload a file</h2>
+    <form method="POST" enctype="multipart/form-data" action="/upload_file">{%csrf_token%}
+      <div>
+        <input name="title" title="title" value="title">
+        <input name="file" type="file">
+
+      </div>
+      <div>
+        <button>Submit</button>
+      </div>
+    </form>
+
+    <h2>Uploaded File:</h2>
+    {{request.FILES.file}}
+  </body>
+</html>

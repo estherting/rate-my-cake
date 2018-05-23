@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      .box1 {
+        background-color: red;
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        margin-right: -4px;
+      }
+      .box2 {
+        background-color: black;
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        margin-right: -4px;
+      }
+    </style>
+  </head>
+
+
+  <body>
+    {% for j in range(0, y)%}
+      <div class="row1">
+        {% for i in range(0, x)%}
+          <div class="box1">&nbsp;</div>
+          <div class="box2">&nbsp;</div>
+        {% endfor %}
+      </div>
+      <div class="row2">
+        {% for i in range(0, x)%}
+          <div class="box2">&nbsp;</div>
+          <div class="box1">&nbsp;</div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+
+  </body>
+</html>

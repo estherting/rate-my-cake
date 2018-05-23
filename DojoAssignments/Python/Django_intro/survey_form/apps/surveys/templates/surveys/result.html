@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Survey Form</title>
+    <style>
+      .category {
+        display: inline-block;
+        font-weight: bold;
+      }
+      .result {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Submitted Information</h1>
+    <div class="result-block">
+      <p class="category">Name: </p>
+      <p class="result">{{request.session.name}}</p>
+    </div>
+
+    <div class="result-block">
+      <p class="category">Dojo Location: </p>
+      <p class="result">{{request.session.location}}</p>
+    </div>
+
+    <div class="result-block">
+      <p class="category">Favorite Language: </p>
+      <p class="result">{{request.session.language}}</p>
+    </div>
+
+    <div class="result-block">
+      <p class="category">Comment: </p>
+      <p class="result">{{request.session.comment}}</p>
+    </div>
+
+    <form action="/" method="POST">{%csrf_token%}
+      <button type="submit">Go Back</button>
+    </form>
+  </body>
+</html>

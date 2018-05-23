@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Session Words</title>
+  </head>
+  <body>
+    <form action="/process" method="POST">{%csrf_token%}
+      <h1>Add a new word</h1>
+      <input name="word" type="text">
+
+      <p>Choose Color</p>
+      <input name="color" type="hidden" value="no-color">
+      <input name="color" type="radio" value="red"> Red
+      <input name="color" type="radio" value="green"> Green
+      <input name="color" type="radio" value="blue"> Blue
+
+      <input id="bigHidden" name="big" type="hidden" value="false">
+      <input id="big" name="big" type="checkbox" value="true"> Show in BIG fonts!
+
+      <button type="submit" value="submit">Add to Session</button>
+
+
+    </form>
+  </body>
+</html>

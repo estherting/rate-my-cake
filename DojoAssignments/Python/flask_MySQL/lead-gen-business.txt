@@ -1,0 +1,28 @@
+# 1 (get the total revenue for March of 2012)
+select sum(amount) as total_rev from billing
+where charged_datetime LIKE "%2012-03%"
+
+# 2 (get total revenue collected from the client with an id of 2)
+select sum(billing.amount) as total_rev, clients.client_id
+from billing join clients on billing.client_id = clients.client_id
+where clients.client_id = 2
+
+# 3 (get all the sites that client = 10 owns)
+select sites.domain_name, clients.client_id
+from sites join clients on clients.client_id = sites.client_id
+where clients.client_id = 10
+
+# 4 (get total # of sites created per month per year for the client with an id of 1? What about for client=20)
+select sites.created_datetime, count(*)
+from sites
+where client_id = 1
+group by created_datetime
+
+# 5 (get the total # of leads we have generated for each of our sites between January
+1st 2011 to February 15th 2011)
+select site_id, count(*) as num_of_leads, registered_datetime
+from leads
+where registered_datetime between "2011-1-1 00:00:00" and "2011-2-15 00:00:00"
+group by site_id
+
+# 6 ()

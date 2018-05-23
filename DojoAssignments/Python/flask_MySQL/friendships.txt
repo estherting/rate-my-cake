@@ -1,0 +1,33 @@
+--Practice:
+select * from users
+left join friendships on users.id = friendships.friend_1_id
+left join users as users2 on users2.id = friendships.friend_2_id
+
+# 1 (Return all users who are friends with Kermit, make sure their names are displayed in results.)
+select users.first_name from users
+left join friendships on users.id = friendships.friend_1_id
+left join users as users2 on users2.id = friendships.friend_2_id
+where users2.first_name = "Kermit"
+
+# 2 (Return the count of all friendships)
+select users.first_name, count(*) as friend_count
+select count(*) from friendships
+
+# 3 (Find out who has the most friends and return the count of their friends.)
+select max(friend_count) as most_friends
+from (select friendships.friend_1_id, count(*) as friend_count from friendships group by friend_1_id) as friends
+
+# 4 (Create a new user and make them friends with Eli Byers, Kermit The Frog, and Marky Mark)
+insert into users values (6, 'New', 'User', now())
+insert into friendships values(6, 2, now());
+insert into friendships values (6, 4, now());
+insert into friendships values(6, 5, now());
+
+# 5 (Return the friends of Eli in alphabetical order)
+select friendships.friend_2_id, users.first_name
+from friendships join users on friendships.friend_2_id = users.id
+where friend_1_id = 2
+UNION
+select friendships.friend_1_id, users.first_name
+from friendships join users on friendships.friend_1_id = users.id
+where friend_2_id = 2

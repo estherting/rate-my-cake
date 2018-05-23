@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+      body {
+        width: 90%;
+        margin: 0 auto;
+      }
+      table {
+        width: 300px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Rock Paper Scissors</h1>
+    <form action="/play" method="post">
+      <select name="move">
+        <option value="rock">Rock</option>
+        <option value="paper">Paper</option>
+        <option value="scissors">Scissors</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+
+    <div>
+      <table class="table">
+        <tr>
+          <th>Rounds</th>
+          <th>Wins</th>
+        </tr>
+        <tbody class="table-striped">
+          {% for i in range(0, session['rounds']|length)%}
+          <tr>
+            <td>{{i+1}}</td>
+            {% if session['rounds'][i] %}
+              <td><img style="width:88px" src="{{url_for('static', filename='img/dog.png')}}"></td>
+            {% else %}
+              <td><img style="width:88px" src="{{url_for('static', filename='img/cat.png')}}"></td>
+            {%endif%}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+  </body>
+</html>

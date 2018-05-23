@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Session Words</title>
+    <style>
+      .red {
+        color: red;
+      }
+      .blue {
+        color: blue;
+      }
+      .green {
+        color: green;
+      }
+      .true {
+        font-size: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/reset" method="POST">{%csrf_token%}
+      <button type="submit">Clear Session</button>
+    </form>
+    {%for i in request.session.input%}
+    <p>
+      <span class="{{i.color}} {{i.big}}">{{i.word}}</span>
+      - aded on {{time}}
+    </p>
+    {%endfor%}
+
+  </body>
+</html>

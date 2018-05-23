@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My jQuery Functions Assignment</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.hide-box').click(function() {
+          $('.hide-box').hide();
+        })
+        $('.show-button').click(function() {
+          $('.hide-box, .toggle-box, .slide-up-box, .slide-down-box, .slide-toggle-box').show();
+        })
+        $('.toggle-box').click(function() {
+          $('.toggle-box').toggle();
+        })
+        $('.slide-up-box').click(function() {
+          $('.slide-up-box').slideUp("slow");
+        })
+        $('.slide-down-button').click(function() {
+          $('.slide-up-box').slideDown("slow");
+        })
+        $('.slide-toggle-box').click(function() {
+          $('.slide-toggle-box').slideToggle();
+        })
+        $('.fade-box').click(function() {
+          $('.fade-box').fadeOut("slow");
+        })
+        $('.fade-in-button').click(function() {
+          $('.fade-box').fadeIn("slow");
+        })
+        $('.add-class-box').click(function() {
+          $('.add-class-box').addClass("border");
+        })
+        $('.remove-class-button').click(function() {
+          $('.add-class-box').removeClass("border");
+        })
+        $('.before-button').click(function() {
+          $('.before-text').before("<h3>me</h3>");
+        })
+        $('.after-button').click(function() {
+          $('.before-text').after("<h3>me</h3>");
+        })
+        $('.append-button').click(function() {
+          $('.append-text').after("<h3>Wonderwoman!</h3>");
+        })
+        $('.html-button').click(function() {
+          $('body').html("<h1>I TOLD YOU!</h1>");
+        })
+        $('.attr-button').click(function() {
+          $('.attr-img').attr("src", "img/missing-img.png");
+        })
+        $('.val-button1').click(function() {
+          var text = $('.val-button1').text();
+          $('.val-input').val(text);
+        })
+        $('.val-button2').click(function() {
+          var text = $('.val-button2').text();
+          $('.val-input').val(text);
+        })
+        $('.val-button3').click(function() {
+          var text = $('.val-button3').text();
+          $('.val-input').val(text);
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <div class="section-block">
+      <div class="instruction">
+        <h1>Hide and Show</h1>
+        <p>Click on the purple box to hide it!</p>
+        <button class="show-button">Click here to show the box</button>
+      </div>
+      <div class="hide-box">&nbsp;</div>
+    </div>
+
+    <div class="section-block">
+      <div class="instruction">
+        <h1>Toggle</h1>
+        <p>Click on the purple box to toggle it!</p>
+        <p>Click on the pink box to slide-toggle it!</p>
+        <button class="show-button">Click here to show the box</button>
+      </div>
+      <div class="toggle-box">&nbsp;</div>
+      <div class="slide-toggle-box">&nbsp;</div>
+    </div>
+
+    <div class="section-block">
+      <div class="instruction">
+        <h1>Slide Up and Down!</h1>
+        <p>Click on the purple box to slide it up!</p>
+        <button class="slide-down-button">Click here to slide it back down!</button>
+      </div>
+      <div class="slide-up-box">&nbsp;</div>
+    </div>
+
+    <div class="section-block">
+      <div class="instruction">
+        <h1>Fade In and Out</h1>
+        <p>Click on the purple box to fade it out!</p>
+        <button class="fade-in-button">Click here to fade in the box</button>
+      </div>
+      <div class="fade-box">&nbsp;</div>
+    </div>
+
+    <div class="section-block">
+      <div class="instruction">
+        <h1>Show Some Class</h1>
+        <p>Click on the purple box to add the 'border' class!</p>
+        <button class="remove-class-button">Click here to remove the border</button>
+      </div>
+      <div class="add-class-box">&nbsp;</div>
+    </div>
+
+    <div class="section-block">
+      <div class="instruction">
+        <h1>Before</h1>
+        <button class="before-button">Click here to add me before you :)</button>
+        <button class="after-button">Click here to add me after you</button>
+      </div>
+      <h3 class="before-text">you</h3>
+    </div>
+
+    <div class="section-block">
+      <div class="instruction">
+        <h1>Append</h1>
+        <button class="append-button">Click here to see who the lottery winner is!</button>
+      </div>
+      <h2 class="append-text">And the winner is...</h2>
+    </div>
+
+    <div class="section-block">
+      <div class="instruction">
+        <h1>html</h1>
+        <button class="html-button">Click with caution...</button>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="instruction">
+        <h1>Attribute</h1>
+        <p>Oops...the image is missing! Click the button to add the source attribute.</p>
+        <button class="attr-button">Show image</button>
+      </div>
+      <img class="attr-image" alt="the myseterious missing image">
+    </div>
+
+    <div class="section-block">
+      <div class="instruction">
+        <h1>Value and Text</h1>
+        <p>MAD LIBS! Click one of the buttons to fill in the blank.</p>
+        <button class="val-button1">Butterfly</button>
+        <button class="val-button2">Rhinoceros</button>
+        <button class="val-button3">Snow Leopard</button>
+      </div>
+      <h2>If I were a Disney princess, my sideckick would be a(n)... </h2>
+      <input class="val-input">
+    </div>
+
+  </body>
+</html>

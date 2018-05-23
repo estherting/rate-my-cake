@@ -1,0 +1,24 @@
+pip install Django==1.11.9
+//There seems to be a problem..."could not find a version that satisfies the requirement..."
+
+pip list
+//lists all the files associated with pip?
+
+pip install Django==1.11.9
+//Same message as before...
+
+pip freeze
+//lists all the files associated with pip AND their version?
+
+cd desktop -> pip freeze > requirements.txt
+//requirements.txt is in the desktop folder now along with other files that already existed.
+//inside the requirements.txt file is what got listed with the pip freeze command
+
+pip uninstall Django
+//my Django was never installed...:(
+
+pip show Django
+//nothing happened...
+
+pip search Flask
+//weird red message...

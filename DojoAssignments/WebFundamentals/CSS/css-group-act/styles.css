@@ -1,0 +1,59 @@
+.container {
+  background-color: silver;
+  border: 2px solid black;
+  width: 304px;
+}
+
+.red {
+  display: inline-block;
+  background-color: red;
+  border: 1px solid black;
+  margin: 9px;
+  /*width: 130px;*/
+  width: calc((100% - 44px)/2);
+  height: 70px;
+}
+
+.blue {
+  display: inline-block;
+  background-color: blue;
+  border: 1px solid black;
+  margin: 9px;
+  /*width: 284px;*/
+  width:  calc((100% - 20px));
+  height: 70px;
+}
+
+.yellow {
+  display: inline-block;
+  background-color: yellow;
+  border: 1px solid black;
+  margin: 9px;
+  /*width: 78px;*/
+  width:  calc((100% - 68px)/3);
+  height: 70px;
+}
+
+.green {
+  display: inline-block;
+  background-color: green;
+  border: 1px solid black;
+  margin: 9px;
+  /*width: 284px;*/
+  width:  calc((100% - 20px));
+  height: 70px;
+}
+
+.purple {
+  display: inline-block;
+  background-color: purple;
+  border: 1px solid black;
+  margin: 9px;
+  width: 60px;
+  height: 50px;
+}
+
+.left-block {
+  /*margin-right: 125px;*/
+  margin-right:  calc((100% - 155px));
+}

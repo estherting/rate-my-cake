@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{message}}</p>
+      {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <form action="/process" method="post">
+      <label>
+        <p>Email: </p>
+        <input name= "email" type="text">
+      </label>
+      <label>
+        <p>First Name: </p>
+        <input name= "first_name" type="text">
+      </label>
+      <label>
+        <p>Last Name: </p>
+        <input name= "last_name" type="text">
+      </label>
+      <label>
+        <p>Password: </p>
+        <input name= "pw" type="text">
+      </label>
+      <label>
+        <p>Confirm Password: </p>
+        <input name= "confirm-pw" type="text">
+      </label>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>

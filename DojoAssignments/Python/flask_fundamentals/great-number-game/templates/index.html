@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Great Number Game</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='main.css')}}">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+      .response-box {
+        background-color: red;
+        padding-top: 50px;
+        color: white;
+        width: 300px;
+        height: 200px;
+        margin: 0 auto;
+        border: 2px solid black;
+        margin-top: 30px;
+      }
+      .green {
+        background-color: green;
+      }
+      button.play-again {
+        display: none;
+        text-align: center;
+      }
+      button.display {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to the Great Number Game!</h1>
+    <p>I am thinking of a number between 1 and 100</p>
+    <p>Take a guess!</p>
+    <form action="/compare" name="guess" method="post">
+      <input name="guess" class="form-control-lg" type="text" placeholder="type a number here!"><br><br>
+      <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </form>
+    <div class="response-box {{color}}">
+      <h1>{{response}}</h1>
+    </div>
+    <form action="/">
+      <button type="submit" class="play-again {{display}}">Play again!</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My Very own Weather Forcast App!</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('form').submit(function() {
+          var city = $('#city').val();
+          var str = "";
+          $.get('http://api.openweathermap.org/data/2.5/weather?q='+city+'&&appid=98727c0c13304fe48c23e3e9fba3510a', function(res) {
+            //console.log(http://api.openweathermap.org/data/2.5/weather?q=+Seattle&&appid=98727c0c13304fe48c23e3e9fba3510a);
+
+            str += "<h1>"+city+"</h1>";
+            str += res["main"]["temp"]+"F";
+            $('.display-weather').html(str);
+          })
+          return false;
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <form>
+      <input id="city" type="text">
+      <input type="submit" value="Search Weather">
+    </form>
+    <div class="display-weather">
+    </div>
+  </body>
+</html>

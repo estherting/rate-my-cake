@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Street Fighter!</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        var state = 0;
+        $('.buttons button').hover(function() {
+          var arena = $(this).text();
+          $('.container').css('background', 'no-repeat center center url(img/' + arena + '.jpg)');
+          $('.container').css('background-size', 'cover');
+        }, function() {
+          if(state == 0) {
+            $('.container').css('background', 'black');
+          }
+        })
+
+        $('.buttons button').click(function() {
+          $('.arena-select').hide();
+          $('.player-select').show();
+          state = 1;
+        })
+
+        // select player
+        $('.player1').change(function() {
+          var player1 = $("option:selected", this).text();
+          $('.player1-img').attr('src', 'img/' + player1 + '.png');
+        })
+
+        $('.player2').change(function() {
+          var player2 = $("option:selected", this).text();
+          $('.player2-img').attr('src', 'img/' + player2 + '.png');
+        })
+
+      })
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="modal arena-select">
+        <h2>Select Arena</h2>
+        <div class="buttons">
+          <button>beach</button>
+          <button>earth</button>
+          <button>dojo</button>
+          <button>forest</button>
+          <button>matrix</button>
+          <button>snow</button>
+        </div>
+      </div>
+
+      <div class="modal player-select">
+        <h2>Select Player</h2>
+        <div class="drop-down">
+          <select class="player1">
+            <option>Select Player 1</option>
+            <option>Donny</option>
+            <option>Leo</option>
+            <option>Mikey</option>
+            <option>Raphael</option>
+          </select>
+          <select class="player2">
+            <option>Select Player 2</option>
+            <option>Donny</option>
+            <option>Leo</option>
+            <option>Mikey</option>
+            <option>Raphael</option>
+          </select>
+        </div>
+      </div>
+
+      <img class="player1-img" src="">
+      <img class="player2-img" src="">
+
+
+    <div>
+  </body>
+</html>

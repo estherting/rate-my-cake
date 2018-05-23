@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='main.css')}}"> -->
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
+  </head>
+  <body>
+    {% for i in range(1, x) %}
+      <img src="static/img/animal-{{i}}.png">
+    {% endfor %}
+  </body>
+</html>

@@ -1,0 +1,89 @@
+h2 {
+  display: inline-block;
+  margin: 40px;
+  width: 300px;
+  height: 100px;
+}
+
+h3 {
+  display: inline;
+  margin: 20px;
+}
+
+button {
+  display: block;
+  margin: 5px;
+  margin-left: 0;
+}
+
+.section-block {
+  border-bottom: 3px solid black;
+  padding: 30px;
+  width: 900px;
+  height: 200px;
+}
+
+.instruction {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.hide-box {
+  display: inline-block;
+  margin: 40px;
+  width: 100px;
+  height: 100px;
+  background-color: purple;
+}
+
+.toggle-box {
+  display: inline-block;
+  margin: 40px;
+  width: 100px;
+  height: 100px;
+  background-color: purple;
+}
+
+.slide-toggle-box {
+  display: inline-block;
+  margin: 40px;
+  width: 100px;
+  height: 100px;
+  background-color: pink;
+}
+
+.slide-up-box {
+  display: inline-block;
+  margin: 40px;
+  width: 100px;
+  height: 100px;
+  background-color: purple;
+}
+
+.slide-down-box {
+  display: inline-block;
+  margin: 40px;
+  width: 100px;
+  height: 100px;
+  background-color: pink;
+}
+
+.fade-box {
+  display: inline-block;
+  margin: 40px;
+  width: 100px;
+  height: 100px;
+  background-color: purple;
+}
+
+.add-class-box {
+  display: inline-block;
+  margin: 40px;
+  width: 100px;
+  height: 100px;
+  background-color: purple;
+}
+
+.border {
+  border: 5px solid gold;
+}

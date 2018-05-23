@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My Friends</title>
+    <style>
+      body {
+        width: 80%;
+        margin: 0 auto;
+      }
+      h4 {
+        display: inline-block;
+      }
+      .friend-block {
+        border-bottom: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>These are my friends!</h1>
+    {% for i in range(0, friends|length) %}
+      <div class="friend-block">
+        <h4>First name: </h4> {{friends[i]['first_name']}}<br>
+        <h4>Last name: </h4> {{friends[i]['last_name']}}<br>
+        <h4>Occupation: </h4> {{friends[i]['occupation']}}
+      </div>
+    {% endfor%}
+
+    <h1>Add a friend!</h1>
+    <form action='/create_friend' method="POST">
+      <h4>First name: </h4>
+      <input name="first_name" type="text"><br>
+      <h4>Last name: </h4>
+      <input name="last_name" type="text"><br>
+      <h4>Occupation: </h4>
+      <input name="occupation" type="text"><br>
+      <input type="submit" name="Add friend!">
+    </form>
+  </body>
+</html>

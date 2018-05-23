@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Dojo Fruit Store!</h1>
+    <main>
+      <h2>What would you like to buy?</h2>
+      <form action="/checkout" method="post">
+        <table>
+          <tr>
+            <th>Fruit Name</th>
+            <th>Quantity</th>
+          </tr>
+          <tr>
+            <td>Strawberry</td>
+            <td>
+              <select name="strawberry">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Raspberry</td>
+            <td>
+              <select name="raspberry">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Apple</td>
+            <td>
+              <select name="apple">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+
+        <h3>Your Information</h3>
+        <label>
+          Name:
+          <input name="name" type="text">
+        </label>
+        <label>
+          Your Student ID:
+          <input name="id" type="text">
+        </label>
+
+        <button type="submit">Buy me stuff!</button>
+      </form>
+    </main>
+    <aside>
+      <h3>Welcome to Dojo Fruit Store!</h3>
+      <p> Your dojo decided to buy fruits for all the students! Please use this app to tell use what you would like to have! Once we get your order, we'll charge your student account automatically.</p>
+      <p>Dojo Fruit Store is proudly built using Flask</p>
+    </aside>
+  </body>
+</html>
