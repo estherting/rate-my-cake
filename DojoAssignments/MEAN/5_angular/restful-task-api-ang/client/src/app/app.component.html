@@ -1,0 +1,18 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Restful Tasks API!
+  </h1>
+  <img width="200" alt="Angular Logo" src="https://seeklogo.com/images/M/mean-logo-608A598807-seeklogo.com.png">
+</div>
+<h2>Get All Tasks </h2>
+<button (click)="getTasksFromService()">Click me to get all tasks</button>
+<ul>
+  <li *ngFor="let task of tasks">
+    <p>{{ task.title }}</p>
+    <button (click)="getTaskById(task._id)">SHOW</button>
+  </li>
+</ul>
+
+<h2>Show Task Detail:</h2>
+<p *ngFor="let t of taskById">{{ t.title }}- {{t.description }}</p>
