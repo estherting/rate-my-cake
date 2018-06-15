@@ -14,12 +14,19 @@ export class HttpService {
   getTasks(){
       return this._http.get('/tasks'); // return the observable
    }
-   postToServer(){
-      return this._http.post('/tasks', task);
+   createTask(newtask){
+      return this._http.post('/tasks', newtask);
    }
 
    getTaskById(id: String){
      console.log("###################", id)
      return this._http.get('/tasks/'+id);
+   }
+   editTask(task){
+     return this._http.put('/tasks/'+task[0]._id, task[0]);
+   }
+   deleteTask(id){
+     console.log('got into delete in service. ID: ', id)
+     return this._http.delete('/tasks/'+id);
    }
 }
