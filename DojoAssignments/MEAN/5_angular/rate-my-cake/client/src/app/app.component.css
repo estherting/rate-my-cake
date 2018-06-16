@@ -1,0 +1,37 @@
+form.submit-cake{
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 30px;
+  border: 1px solid black;
+  width: 300px;
+  padding: 10px;
+}
+
+label {
+  display: block;
+  margin: 10px;
+}
+
+img {
+  width: 200px;
+}
+
+.rate-section {
+  display: inline-block;
+  margin-left: 50px;
+  overflow: scroll;
+  vertical-align: top;
+  width: 500px;
+  height: 300px;
+}
+
+form.rate{
+  display: inline-block;
+  vertical-align: top;
+}
+
+form.rate input {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.2em;
+}

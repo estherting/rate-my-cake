@@ -1,0 +1,42 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Rate My Cake!
+  </h1>
+</div>
+
+<form (submit)="submitCake()" class="submit-cake" method="post">
+  <h2>Submit a cake to be rated</h2>
+  <label>
+    Baker name:
+    <input type="text" name="baker" [(ngModel)]="newCake.baker">
+  </label>
+  <label>
+    Image Url:
+    <input type="text" name="imgUrl" [(ngModel)]="newCake.imgUrl">
+  </label>
+  <button type="submit">Submit</button>
+</form>
+
+<section class="rate-section">
+  <div *ngFor="let cake of cakes" class="cake">
+    <img (click)="cakeToShow(cake)" src="{{cake.imgUrl}}" alt="cake">
+    <form (submit)="rate(cake._id)" class="rate" method="post">
+      <select name="stars" [(ngModel)]="newComment.stars">
+        <option value="5">5 stars</option>
+        <option value="4">4 stars</option>
+        <option value="3">3 stars</option>
+        <option value="2">2 stars</option>
+        <option value="1">1 stars</option>
+      </select>
+      <input type="text" name="comment" (input)="newComment.comment = $event.target.value" placeholder="Type your comment here">
+      <button type="submit">Rate!</button>
+    </form>
+  </div>
+</section>
+
+
+<app-cake *ngIf="selectedCake" [cakeToShow]="selectedCake"></app-cake>
+
+
+<!-- (input)="newReview.rating = $event.target.value" // one-way binding from html to ts -->
